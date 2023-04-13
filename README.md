@@ -101,6 +101,10 @@ Prometheus `https://artifacthub.io/packages/helm/prometheus-community/prometheus
 
 Grafana `https://artifacthub.io/packages/helm/grafana/grafana` 
 
+Deploy an ingress rule with host based routing in the `apm` namespace:
+```bash
+kubectl apply -f ingress-apm.yml -n apm
+```
 
 Navigate to route53 in the aws console and create a record set for prometheus and grafana (an A record with "simple routing" rule) with both pointing to the loadbalncer created earlier by nginx.
 
