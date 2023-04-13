@@ -12,6 +12,7 @@ Technologies Used
 - Prometheus
 - Grafana 
 
+
 ## Architecture
 
 The project's architecture main components are:
@@ -114,6 +115,11 @@ Navigate to route53 in the aws console and create a record set for prometheus an
 Once the application is deployed, you can access it by navigating to the domain URL `your-domainName.com` in a web browser. The application will display a simple form with database entries made on the page.
 
 You can access prometheus and grafana from your web browser: `alert.your-domainName.com`, `prometheus.your-domainName.com`, `grafana.your-domainName.com`
+
+
+## NB
+
+Edit the `ingress.yml` and `ingress-apm.yml` files to reflect respective domain name values.
 
 
 ## Conclusion
