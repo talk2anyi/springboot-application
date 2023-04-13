@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: Ingress-apm
+  namespace: apm
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: alert.your-domainName.com
+    http:
+      paths:
+      - path: /alertmanager
+        pathType: Prefix
+        backend:
+          service:
+            name: prometheus-alertmanager
+            port:
+              number: 80
+  - host: prometheus.your-domainName.com
+    http:
+      paths:
+      - path: /prometheus
+        pathType: Prefix
+        backend:
+          service:
+            name: prometheus-server
+            port:
+              number: 80
+  - host: grafana.your-domainName.com
+    http:
+      paths:
+      - path: /grafana
+        pathType: Prefix
+        backend:
+          service:
+            name: grafana
+            port:
+              number: 80
